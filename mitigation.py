@@ -15,8 +15,7 @@ class DDoSMitigator:
 
     def __init__(self,
                  high_confidence_threshold=0.9,
-                 medium_confidence_threshold=0.7,
-                 low_confidence_threshold=0.5):
+                 medium_confidence_threshold=0.7):
         """
         Initialize mitigator with confidence thresholds.
 
@@ -28,7 +27,6 @@ class DDoSMitigator:
         self.thresholds = {
             'high': high_confidence_threshold,
             'medium': medium_confidence_threshold,
-            'low': low_confidence_threshold
         }
         self.mitigation_history = []
 
@@ -115,9 +113,6 @@ class DDoSMitigator:
             elif prob >= self.thresholds['medium']:
                 action = 'RATE_LIMIT'
                 confidence_level = 'MEDIUM'
-            elif prob >= self.thresholds['low']:
-                action = 'MONITOR'
-                confidence_level = 'LOW'
             else:
                 action = 'ALLOW'
                 confidence_level = 'VERY_LOW'
@@ -267,7 +262,6 @@ class DDoSMitigator:
             # Thresholds used
             'high_threshold': self.thresholds['high'],
             'medium_threshold': self.thresholds['medium'],
-            'low_threshold': self.thresholds['low']
         }
 
     def _get_strategy_breakdown(self, actions_df):
@@ -410,6 +404,5 @@ class DDoSMitigator:
         print("\n⚙️ Configuration:")
         print(f"High Confidence Threshold: {metrics['high_threshold']}")
         print(f"Medium Confidence Threshold: {metrics['medium_threshold']}")
-        print(f"Low Confidence Threshold: {metrics['low_threshold']}")
 
         print("="*70 + "\n")
