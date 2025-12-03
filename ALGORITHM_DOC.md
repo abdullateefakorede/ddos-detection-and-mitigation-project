@@ -426,7 +426,6 @@
    mitigator = DDoSMitigator(
        high_confidence_threshold=0.9,
        medium_confidence_threshold=0.7,
-       low_confidence_threshold=0.5
    )
    ```
 
