@@ -279,7 +279,7 @@ class DDoSMitigator:
                     'percentage': len(action_df) / len(actions_df) * 100,
                     'correct_actions': action_df['is_correct_action'].sum(),
                     'accuracy': action_df['is_correct_action'].sum() / len(action_df),
-                    'avg_probability': float(action_df['probability'].mean()),
+                    'avg_confidence': float(action_df['probability'].mean()),
                     'true_attacks_caught': len(action_df[action_df['true_label'] == 1]),
                     'benign_affected': len(action_df[action_df['true_label'] == 0])
                 }
@@ -289,7 +289,7 @@ class DDoSMitigator:
                     'percentage': 0.0,
                     'correct_actions': 0,
                     'accuracy': 0.0,
-                    'avg_probability': 0.0,
+                    'avg_confidence': 0.0,
                     'true_attacks_caught': 0,
                     'benign_affected': 0
                 }

@@ -504,7 +504,7 @@
        'percentage': percentage of total,
        'correct_actions': correctly applied,
        'accuracy': action accuracy,
-       'avg_probability': mean confidence,
+       'avg_confidence': mean confidence,
        'true_attacks_caught': attacks with this action,
        'benign_affected': benign traffic with this action
    }
